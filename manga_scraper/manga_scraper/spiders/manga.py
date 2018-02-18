@@ -2,11 +2,14 @@
 import scrapy
 from manga_scraper.items import MangaChapterItem
 
+BASE_URL = 'https://manga-fox.com/read-nisekoi-manga-online-for-free2/chapter-'
+START_CHAPTER = 8
+END_CHAPTER = 16
 
 class MangaSpider(scrapy.Spider):
     name = 'manga'
     allowed_domains = ['manga-fox.com']
-    start_urls = ['https://manga-fox.com/read-nisekoi-manga-online-for-free2/chapter-1']
+    start_urls = [BASE_URL + str(x) for x in range(START_CHAPTER, END_CHAPTER + 1)]
 
     def parse(self, response):
         manga_chapter = MangaChapterItem()
