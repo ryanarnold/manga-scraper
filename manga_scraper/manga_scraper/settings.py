@@ -68,7 +68,7 @@ ITEM_PIPELINES = {
    'scrapy.pipelines.images.ImagesPipeline': 1
 }
 
-IMAGES_STORE = './output'
+IMAGES_STORE = './temp'
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://doc.scrapy.org/en/latest/topics/autothrottle.html
@@ -92,7 +92,7 @@ IMAGES_STORE = './output'
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
 
 FEED_FORMAT = 'JSON'
-FEED_URI = 'output/manga_details.json'
+FEED_URI = 'temp/manga_details.json'
 FEED_EXPORT_FIELDS = [
 	'manga_title',
 	'chapter_number',
